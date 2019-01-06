@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']    = 'Home delivery';
+$_['heading_title']    = 'Home Delivery';
 
 // Text
 $_['text_extension']   = 'Extensions';
@@ -16,4 +16,3 @@ $_['entry_sort_order'] = 'Sort Order:';
 
 // Error
 $_['error_permission'] = 'Warning: You do not have permission to modify home delivery shipping!';
-?>
