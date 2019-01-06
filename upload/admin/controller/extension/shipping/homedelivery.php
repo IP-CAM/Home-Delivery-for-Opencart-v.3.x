@@ -93,40 +93,7 @@ class ControllerExtensionShippingHomeDelivery extends Controller {
 		if (!$this->user->hasPermission('modify', 'extension/shipping/homedelivery')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
-}
 
-	
-	public function install() {
-$this->load->model('setting/setting');     
-$this->db->query("
-INSERT INTO " . DB_PREFIX . "setting (
-`setting_id` ,
-`store_id` ,
-`group` ,
-`key` ,
-`value` ,
-`serialized`
-)
-VALUES (
-NULL , '0', 'homedelivery', 'homedelivery_sort_order', '', '0'
-),(
-NULL , '0', 'homedelivery', 'homedelivery_status', '', '0'
-),(
-NULL , '0', 'homedelivery', 'homedelivery_geo_zone_id', '1', '0'
-),(
-NULL , '0', 'homedelivery', 'homedelivery_tax_class_id', '1', '0'
-),(
-NULL , '0', 'homedelivery', 'homedelivery_cost', '5.00', '0'
-);
-");
+		return !$this->error;
+	}
 }
-
-public function uninstall() {
-$this->db->query("
-DELETE FROM " . DB_PREFIX . "setting 
-WHERE `group` = 'homedelivery' 
-");
-}
-
-}
-
